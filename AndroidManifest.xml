@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="41" android:versionName="1.5.0" android:compileSdkVersion="31" android:compileSdkVersionCodename="12" package="com.hqdevs.schoolmanagementsystem" platformBuildVersionCode="31" platformBuildVersionName="12">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+	<uses-feature android:name="android.hardware.fingerprint" android:required="false" />
+	<uses-feature android:name="android.hardware.camera" android:required="true" />
+	<uses-permission android:name="android.permission.USE_BIOMETRIC" android:required="false" />
+	<uses-permission android:name="android.permission.INTERNET" android:required="false" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:required="false" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:required="false" />
+	<uses-permission android:name="android.permission.CAMERA" android:required="false" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" android:required="false" />
+	<uses-permission android:name="android.permission.CALL_PHONE" android:required="false" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" android:required="false" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" android:required="false" />
+	<supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" />
+	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.VIEW" />
+			<category android:name="android.intent.category.BROWSABLE" />
+			<data android:scheme="https" />
+		</intent>
+		<intent>
+			<action android:name="android.support.customtabs.action.CustomTabsService" />
+		</intent>
+	</queries>
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+	<application android:theme="resourceId:0x7f120009" android:label="School Management System" android:icon="res/dK.png" android:name="com.hqdevs.schoolmanagementsystem.utility.MyApplication" android:allowBackup="true" android:largeHeap="true" android:supportsRtl="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		<activity android:theme="resourceId:0x7f12000a" android:label="Custom Queries" android:name="com.hqdevs.schoolmanagementsystem.views.CustomQueryActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" />
+		<receiver android:name="com.hqdevs.schoolmanagementsystem.commons.BootCompleteReceiver" android:enabled="false" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+		<service android:name="com.hqdevs.schoolmanagementsystem.commons.FeeReminderNotifyService" android:enabled="true" android:exported="true" />
+		<receiver android:name="com.hqdevs.schoolmanagementsystem.commons.AlarmReceiver" android:enabled="false" android:exported="true" />
+		<service android:name="com.hqdevs.schoolmanagementsystem.commons.StaffAttendanceSmsService" android:enabled="true" android:exported="true" />
+		<service android:name="com.hqdevs.schoolmanagementsystem.commons.StudentsTestSmsService" android:enabled="true" android:exported="true" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.SplashScreen" android:exported="true" android:screenOrientation="portrait" android:configChanges="0xfb0">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:theme="resourceId:0x7f12000a" android:label="Account Statement" android:name="com.hqdevs.schoolmanagementsystem.views.accountviews.AccountDetails" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Make a Transaction" android:name="com.hqdevs.schoolmanagementsystem.views.accountviews.MakeTransaction" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Account Heads" android:name="com.hqdevs.schoolmanagementsystem.views.accountviews.AccountsList" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Attendance Numbers" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.AttendanceNumbersStaff" android:screenOrientation="portrait" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Select Staff" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.SelectStaffActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Attendance Detail" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.AttendanceDetailStaff" android:screenOrientation="fullSensor" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f1201aa" android:label="" android:name="com.hqdevs.schoolmanagementsystem.views.BarcodeScannerActivity" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="View/Update Attendances" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.ViewUpdateAttendances" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Mark Attendances" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.MarkStaffAttendances" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Designations" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.DesignationsView" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Add Staff" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.AddViewStaff" android:configChanges="0xfb0" />
+		<activity android:theme="resourceId:0x7f12000a" android:label="Staff" android:name="com.hqdevs.schoolmanagementsystem.views.staffviews.StaffList" android:configChanges="0xfb0" />
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="0xfb0" />
+		<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true" />
+		<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-6530841360478175~3215461840" />
+		<meta-data android:name="preloaded_fonts" android:resource="resourceId:0x7f030003" />
+		<provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.hqdevs.schoolmanagementsystem.provider" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="res/jB.xml" />
+		</provider>
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.LoginActivity" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.MainActivity" />
+		<activity android:label="Classes" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.ClassesList" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Students" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.StudentsList" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Add Student" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.AddViewStudent" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Fee" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.FeeSubmitActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.FeeHistoryActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<service android:name="com.hqdevs.schoolmanagementsystem.commons.StudentsAttendanceSmsService" android:enabled="true" android:exported="true" />
+		<activity android:label="Mark Attendance" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.MarkAttendanceActivity" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="View/Update Attendance" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.ViewUpdateAttendanceActivity" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.AttendanceDetailActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:theme="resourceId:0x7f1200fa" android:name="com.hqdevs.schoolmanagementsystem.views.ImageViewActivity" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.MarkTestActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Class Wise Test" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.TestDetailsClassWise" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Select Student" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.SelectStudentActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:label="Test History" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.TestHistoryActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:theme="resourceId:0x7f1201a8" android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait" />
+		<activity android:label="Attendance Numbers" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.AttendeceNumbersActivity" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<activity android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.FeeStudentsActivity" android:configChanges="0xfb0" />
+		<activity android:label="Mark Test List (Experimental)" android:name="com.hqdevs.schoolmanagementsystem.views.studentviews.MarkStudentsTest" android:screenOrientation="portrait" android:configChanges="0xfb0" android:windowSoftInputMode="0x22" />
+		<service android:name="com.hqdevs.schoolmanagementsystem.utility.MyFirebaseMessagingService" android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="res/Ew.png" />
+		<meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="3f51b5" />
+		<activity android:theme="resourceId:0x7f1200ed" android:name="com.karumi.dexter.DexterActivity" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+		</service>
+		<provider android:name="com.google.android.gms.ads.MobileAdsInitProvider" android:exported="false" android:authorities="com.hqdevs.schoolmanagementsystem.mobileadsinitprovider" android:initOrder="100" />
+		<service android:name="com.google.android.gms.ads.AdService" android:enabled="true" android:exported="false" />
+		<provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.hqdevs.schoolmanagementsystem.androidx-startup">
+			<meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup" />
+			<meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
+			<meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
+		</provider>
+		<service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="false" android:exported="true" android:directBootAware="false" />
+		<service android:name="androidx.work.impl.foreground.SystemForegroundService" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<receiver android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BATTERY_OKAY" />
+				<action android:name="android.intent.action.BATTERY_LOW" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+				<action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.TIME_SET" />
+				<action android:name="android.intent.action.TIMEZONE_CHANGED" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="true" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+			</intent-filter>
+		</receiver>
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" />
+		<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false" />
+		<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false" />
+		<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false" />
+		<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.hqdevs.schoolmanagementsystem.firebaseinitprovider" android:initOrder="100" android:directBootAware="true" />
+		<meta-data android:name="com.google.android.gms.version" android:value="12451000" />
+		<service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+			<meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct" />
+		</service>
+		<service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" />
+		<receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false" />
+		<service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true" />
+	</application>
+</manifest>
